@@ -4,7 +4,7 @@ function cartBoxCreation(sourceItem, nameProduct, priceProduct, itemId, dataQuan
     let quantity = parseInt(dataQuantity);
     let id = itemId;
     let nameProductText = nameProduct.innerText;
-    let priceProductItem = parseInt(priceProduct.innerText.slice(8, 11));
+    let priceProductItem = parseInt(priceProduct.innerText.slice(8, (priceProduct.innerText.length)));
     var cardBox = document.createElement("div");
     const cartBox = document.querySelector("#cart-box");
     let itemsCost = priceProductItem * quantity;
@@ -29,15 +29,13 @@ function cartBoxCreation(sourceItem, nameProduct, priceProduct, itemId, dataQuan
                         
     cartBox.appendChild(cardBox);
 
-    console.log(priceProductItem);
 
     let priceBoxs = document.querySelectorAll(".priceBox");
 
     let totalPrice = 0;
         for(let i = 0; i < priceBoxs.length; i++){
-            totalPrice += parseInt(priceBoxs[i].innerText.slice(8, 11));
+            totalPrice += parseInt(priceBoxs[i].innerText.slice(8, (priceBoxs[i].innerText.length)));
         }
-        console.log(totalPrice);
         document.querySelector("#priceTotalBox").innerText = `Total price : ${totalPrice}€`;
 
 
@@ -56,7 +54,7 @@ function cartBoxCreation(sourceItem, nameProduct, priceProduct, itemId, dataQuan
                 else{
                 btnRemove.setAttribute("data-event", "done");
                 btnRemove.addEventListener("click", function(){
-                let priceProductItem = parseInt(priceProduct.innerText.slice(8, 11));
+                let priceProductItem = parseInt(priceProduct.innerText.slice(8, (priceProduct.innerText.length)));
                 let idRemove = this.id.slice(10);
                 console.log(idRemove);
                 let qty = parseInt(document.querySelector("#box" + idRemove).getAttribute("data-quantity"));
@@ -81,7 +79,7 @@ function cartBoxCreation(sourceItem, nameProduct, priceProduct, itemId, dataQuan
         
                 let totalPrice = 0;
                 for(let i = 0; i < priceBoxs.length; i++){
-                    totalPrice += parseInt(priceBoxs[i].innerText.slice(8, 12));
+                    totalPrice += parseInt(priceBoxs[i].innerText.slice(8, (priceBoxs[i].innerText.length)));
                 }
                 console.log(totalPrice);
                 document.querySelector("#priceTotalBox").innerText = `Total price : ${totalPrice}€`;
@@ -139,7 +137,7 @@ const btnAdds = document.querySelectorAll(".AddCartBtn");
             console.log(quantitySpot);
             if (quantitySpot !== null){
                 quantitySpot.innerText = "Quantity : " + dataQuantity;
-                priceSpot.innerText = "Price : " + (parseInt(priceProduct.innerText.slice(8, 11)) * dataQuantity);
+                priceSpot.innerText = "Price : " + (parseInt(priceProduct.innerText.slice(8, (priceProduct.innerText.length))) * dataQuantity);
             }
             
         }
@@ -149,7 +147,7 @@ const btnAdds = document.querySelectorAll(".AddCartBtn");
         let totalPrice = 0;
 
         for(let i = 0; i < priceBoxs.length; i++){
-            totalPrice += parseInt(priceBoxs[i].innerText.slice(8, 12));
+            totalPrice += parseInt(priceBoxs[i].innerText.slice(8, (priceBoxs[i].innerText.length)));
         }
         console.log(totalPrice);
         document.querySelector("#priceTotalBox").innerText = `Total price : ${totalPrice}€`;
