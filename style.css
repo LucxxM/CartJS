@@ -76,7 +76,7 @@ section{
     display: none;
     position: fixed;
     top: 0;
-    right: ;
+    right: 0;
     width: 15%;
     min-width: 150px;
     transform: translateX(-100%);
