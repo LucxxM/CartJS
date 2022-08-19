@@ -6,12 +6,11 @@ section{
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 1.5em;
-    position: relative;
+    
 }
 
 .product-box{
-    width: 25%;
-    min-width: 150px;
+    width: max(25%, 150px);
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -75,7 +74,7 @@ section{
 
 #cart-box{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 15%;
