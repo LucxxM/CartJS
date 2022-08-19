@@ -10,7 +10,7 @@ section{
 }
 
 .product-box{
-    width: max(25%, 150px);
+    width: max(25%, 200px);
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
